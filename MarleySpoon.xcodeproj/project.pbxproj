@@ -23,6 +23,7 @@
 		74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F60D251CD6C900B5CB16 /* RecipeCell.swift */; };
 		74E8F610251CD6C900B5CB16 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */; };
 		74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */; };
+		74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		74E8F60D251CD6C900B5CB16 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenter.swift; sourceTree = "<group>"; };
+		74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		74E8F5C3251CCBCA00B5CB16 /* MarleySpoon */ = {
 			isa = PBXGroup;
 			children = (
+				74E8F614251CDB5300B5CB16 /* Model */,
 				74E8F5F6251CCD5300B5CB16 /* Application */,
 				74E8F5F5251CCD2B00B5CB16 /* Modules */,
 				74E8F5F4251CCCDC00B5CB16 /* Resources */,
@@ -218,6 +221,14 @@
 				74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		74E8F614251CDB5300B5CB16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 			files = (
 				74E8F5C9251CCBCA00B5CB16 /* RecipeListViewController.swift in Sources */,
 				74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */,
+				74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */,
 				74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */,
 				74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */,
 				74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */,

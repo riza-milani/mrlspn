@@ -55,6 +55,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardView" destination="5dG-GU-gfU" id="KCe-8p-bpU"/>
+                <outlet property="recipeImage" destination="VB6-ha-j59" id="sWs-ax-E12"/>
+                <outlet property="recipeTitle" destination="cuw-Wy-Ck1" id="Dma-RP-4Yc"/>
             </connections>
             <point key="canvasLocation" x="-228.2608695652174" y="180.80357142857142"/>
         </tableViewCell>

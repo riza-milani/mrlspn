@@ -8,10 +8,18 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class RecipeListViewController: UIViewController {
 
     var presenter: RecipeListPresenterProtocol?
+    let bag = DisposeBag()
+    var recipes: [RecipeEntity]? {
+        didSet {
+            showNoRecipe(recipes?.isEmpty ?? true)
+            tableView.reloadData()
+        }
+    }
 
     lazy private var tableView: UITableView = {
         let tableView = UITableView()
@@ -27,6 +35,18 @@ class RecipeListViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(tableView)
+        showNoRecipe(true)
+        subscribeToRecipes()
+        presenter?.loadRecipes()
+    }
+
+    func subscribeToRecipes() {
+        presenter?.recipes.subscribe(onNext: { [weak self] recipes in
+            self?.recipes = recipes
+
+        }, onError: { error in
+            print("Error \(error)")
+        }).disposed(by: bag)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +54,19 @@ class RecipeListViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
             make.center.equalToSuperview()
+        }
+    }
+
+    func showNoRecipe(_ state: Bool) {
+        if state {
+            let tableViewBackgroundView = UILabel()
+            tableViewBackgroundView.text = "No recipes yet!\nCome back soon ..."
+            tableViewBackgroundView.numberOfLines = 0
+            tableViewBackgroundView.font = UIFont.systemFont(ofSize: 20.0)
+            tableViewBackgroundView.textAlignment = .center
+            tableView.backgroundView = tableViewBackgroundView
+        } else {
+            tableView.backgroundView = nil
         }
     }
 
@@ -47,11 +80,12 @@ extension RecipeListViewController: UITableViewDelegate {
 
 extension RecipeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return recipes?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeCell.self), for: indexPath) as? RecipeCell else { return UITableViewCell() }
+        cell.recipe = recipes?[indexPath.row]
         return cell
     }
 

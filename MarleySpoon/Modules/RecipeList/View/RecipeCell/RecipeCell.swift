@@ -10,10 +10,22 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
 
-    @IBOutlet weak var cardView: UIView!
+    @IBOutlet private weak var cardView: UIView!
+    var recipe: RecipeEntity? {
+        didSet {
+            prepareForReuse()
+        }
+    }
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeTitle: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         cardView.layer.cornerRadius = 10
+    }
+
+    override func prepareForReuse() {
+        recipeTitle.text = recipe?.title
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
