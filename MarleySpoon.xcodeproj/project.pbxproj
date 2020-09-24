@@ -10,11 +10,12 @@
 		74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5C4251CCBCA00B5CB16 /* AppDelegate.swift */; };
 		74E8F5C7251CCBCA00B5CB16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5C6251CCBCA00B5CB16 /* SceneDelegate.swift */; };
 		74E8F5C9251CCBCA00B5CB16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5C8251CCBCA00B5CB16 /* ViewController.swift */; };
-		74E8F5CC251CCBCA00B5CB16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F5CA251CCBCA00B5CB16 /* Main.storyboard */; };
 		74E8F5CE251CCBCD00B5CB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F5CD251CCBCD00B5CB16 /* Assets.xcassets */; };
 		74E8F5D1251CCBCD00B5CB16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F5CF251CCBCD00B5CB16 /* LaunchScreen.storyboard */; };
 		74E8F5DC251CCBCE00B5CB16 /* MarleySpoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5DB251CCBCE00B5CB16 /* MarleySpoonTests.swift */; };
 		74E8F5E7251CCBCE00B5CB16 /* MarleySpoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5E6251CCBCE00B5CB16 /* MarleySpoonUITests.swift */; };
+		74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5FB251CCDD200B5CB16 /* RecipeListRouter.swift */; };
+		74E8F5FE251CCFC400B5CB16 /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		74E8F5C4251CCBCA00B5CB16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E8F5C6251CCBCA00B5CB16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		74E8F5C8251CCBCA00B5CB16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		74E8F5CB251CCBCA00B5CB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74E8F5CD251CCBCD00B5CB16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74E8F5D0251CCBCD00B5CB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74E8F5D2251CCBCD00B5CB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		74E8F5E2251CCBCE00B5CB16 /* MarleySpoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarleySpoonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E8F5E6251CCBCE00B5CB16 /* MarleySpoonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonUITests.swift; sourceTree = "<group>"; };
 		74E8F5E8251CCBCE00B5CB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E8F5FB251CCDD200B5CB16 /* RecipeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRouter.swift; sourceTree = "<group>"; };
+		74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,9 @@
 		74E8F5C3251CCBCA00B5CB16 /* MarleySpoon */ = {
 			isa = PBXGroup;
 			children = (
-				74E8F5C4251CCBCA00B5CB16 /* AppDelegate.swift */,
-				74E8F5C6251CCBCA00B5CB16 /* SceneDelegate.swift */,
-				74E8F5C8251CCBCA00B5CB16 /* ViewController.swift */,
-				74E8F5CA251CCBCA00B5CB16 /* Main.storyboard */,
-				74E8F5CD251CCBCD00B5CB16 /* Assets.xcassets */,
-				74E8F5CF251CCBCD00B5CB16 /* LaunchScreen.storyboard */,
-				74E8F5D2251CCBCD00B5CB16 /* Info.plist */,
+				74E8F5F6251CCD5300B5CB16 /* Application */,
+				74E8F5F5251CCD2B00B5CB16 /* Modules */,
+				74E8F5F4251CCCDC00B5CB16 /* Resources */,
 			);
 			path = MarleySpoon;
 			sourceTree = "<group>";
@@ -126,6 +124,67 @@
 				74E8F5E8251CCBCE00B5CB16 /* Info.plist */,
 			);
 			path = MarleySpoonUITests;
+			sourceTree = "<group>";
+		};
+		74E8F5F4251CCCDC00B5CB16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5CD251CCBCD00B5CB16 /* Assets.xcassets */,
+				74E8F5CF251CCBCD00B5CB16 /* LaunchScreen.storyboard */,
+				74E8F5D2251CCBCD00B5CB16 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		74E8F5F5251CCD2B00B5CB16 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5F8251CCD9B00B5CB16 /* RecipeDetail */,
+				74E8F5F7251CCD6600B5CB16 /* RecipeList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		74E8F5F6251CCD5300B5CB16 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5C4251CCBCA00B5CB16 /* AppDelegate.swift */,
+				74E8F5C6251CCBCA00B5CB16 /* SceneDelegate.swift */,
+				74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		74E8F5F7251CCD6600B5CB16 /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5FF251CD08D00B5CB16 /* View */,
+				74E8F5FA251CCDB700B5CB16 /* Router */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
+		74E8F5F8251CCD9B00B5CB16 /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
+		74E8F5FA251CCDB700B5CB16 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5FB251CCDD200B5CB16 /* RecipeListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		74E8F5FF251CD08D00B5CB16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F5C8251CCBCA00B5CB16 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +293,6 @@
 			files = (
 				74E8F5D1251CCBCD00B5CB16 /* LaunchScreen.storyboard in Resources */,
 				74E8F5CE251CCBCD00B5CB16 /* Assets.xcassets in Resources */,
-				74E8F5CC251CCBCA00B5CB16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +319,9 @@
 			files = (
 				74E8F5C9251CCBCA00B5CB16 /* ViewController.swift in Sources */,
 				74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */,
+				74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */,
 				74E8F5C7251CCBCA00B5CB16 /* SceneDelegate.swift in Sources */,
+				74E8F5FE251CCFC400B5CB16 /* AppRoot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		74E8F5CA251CCBCA00B5CB16 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74E8F5CB251CCBCA00B5CB16 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		74E8F5CF251CCBCD00B5CB16 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,7 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MarleySpoon/Info.plist;
+				INFOPLIST_FILE = MarleySpoon/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MarleySpoon/Info.plist;
+				INFOPLIST_FILE = MarleySpoon/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
