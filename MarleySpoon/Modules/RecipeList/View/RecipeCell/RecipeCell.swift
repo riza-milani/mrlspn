@@ -25,6 +25,7 @@ class RecipeCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         selectionStyle = .none
         recipeImage.layer.cornerRadius = recipeImage.frame.height / 2
+        recipeImage.contentMode = .scaleAspectFill
     }
 
     override func prepareForReuse() {
