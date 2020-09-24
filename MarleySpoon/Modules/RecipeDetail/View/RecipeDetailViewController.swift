@@ -16,33 +16,38 @@ class RecipeDetailViewController: UIViewController {
 
     lazy private var recipeImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
     lazy private var recipeTitle: UILabel = {
         let title = UILabel()
+        title.font = UIFont.boldSystemFont(ofSize: 20)
+        title.numberOfLines = 0
         return title
     }()
 
     lazy private var recipeDescription: UITextView = {
         let textView = UITextView()
-        textView.textAlignment = .justified
-        textView.backgroundColor = .gray
+        textView.textAlignment = .left
+        textView.isUserInteractionEnabled = true
+        textView.isEditable = false
+        textView.font = UIFont.systemFont(ofSize: 18)
         return textView
     }()
 
     lazy private var recipeChefName: UILabel = {
         let lable = UILabel()
-        lable.text = "Chef"
-        lable.backgroundColor = .gray
+        lable.textColor = .blue
+        lable.font = UIFont.boldSystemFont(ofSize: 16)
         return lable
     }()
 
     lazy private var recipeTags: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.backgroundColor = .gray
+        stackView.distribution = .fillProportionally
         stackView.spacing = 4
         return stackView
     }()
@@ -59,27 +64,22 @@ class RecipeDetailViewController: UIViewController {
     }
 
     func initUIView() {
+
         let recipe = presenter?.getRecipe()
-        recipeTitle.text = recipe?.title
-        recipeChefName.text = recipe?.chef
-        recipeDescription.text = recipe?.description
+
         if let imageString = recipe?.image, let imageUrl = URL(string: imageString) {
             recipeImageView.kf.setImage(with: imageUrl)
-            recipeImageView.contentMode = .scaleAspectFit
         }
+
+        recipeTitle.text = recipe?.title
+
+        recipeChefName.text = recipe?.chef
+
+        recipeDescription.text = recipe?.description
+
         recipe?.tags?.forEach({ tag in
-            let view = UIView()
-            view.layer.cornerRadius = 10
-            view.backgroundColor = .gray
-            let label = UILabel()
-            label.text = tag
-            label.textAlignment = .center
-            view.addSubview(label)
-            label.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-                make.width.height.equalToSuperview()
-            }
-            recipeTags.addArrangedSubview(view)
+            let label = createTagLabelByString(tag)
+            recipeTags.addArrangedSubview(label)
         })
     }
 
@@ -120,5 +120,18 @@ class RecipeDetailViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-16)
         }
     }
+}
 
+extension RecipeDetailViewController {
+
+    func createTagLabelByString(_ text: String) -> UILabel {
+        let label = UILabel()
+        label.backgroundColor = .lightGray
+        label.textColor = .white
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
+        label.text = text
+        label.textAlignment = .center
+        return label
+    }
 }
