@@ -20,7 +20,12 @@ class RecipeListRouter: RecipeListRouterProtocol {
     func assemble() -> UIViewController {
         let viewController = RecipeListViewController()
         let presenter = RecipeListPresenter()
+        // If REST is needed uncomment bottom line and comment next line. :)
+        let repository = RepositoryREST()
+        //let repository = RepositoryGraphQL()
+        let interactor = RecipeListInteractor(repository: repository)
         presenter.router = self
+        presenter.interactor = interactor
         viewController.presenter = presenter
         self.viewController = viewController
         return viewController

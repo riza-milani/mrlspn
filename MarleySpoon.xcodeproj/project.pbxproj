@@ -27,6 +27,13 @@
 		74E8F61B251CE37600B5CB16 /* RecipeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61A251CE37600B5CB16 /* RecipeDetailRouter.swift */; };
 		74E8F61D251CE3D900B5CB16 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61C251CE3D900B5CB16 /* RecipeDetailViewController.swift */; };
 		74E8F620251CE60600B5CB16 /* RecipeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61F251CE60600B5CB16 /* RecipeDetailPresenter.swift */; };
+		74E8F623251CF24700B5CB16 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F622251CF24700B5CB16 /* RepositoryProtocol.swift */; };
+		74E8F625251CF2EB00B5CB16 /* RepositoryREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F624251CF2EB00B5CB16 /* RepositoryREST.swift */; };
+		74E8F627251CF30200B5CB16 /* RepositoryGrapQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F626251CF30200B5CB16 /* RepositoryGrapQL.swift */; };
+		74E8F62C251CF83200B5CB16 /* GraphQLRecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F62B251CF83200B5CB16 /* GraphQLRecipeAPI.swift */; };
+		74E8F62F251CFE4C00B5CB16 /* RecipeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F62E251CFE4C00B5CB16 /* RecipeListInteractor.swift */; };
+		74E8F632251D02FD00B5CB16 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 74E8F631251D02FD00B5CB16 /* Contentful */; };
+		74E8F635251D190300B5CB16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F634251D190300B5CB16 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +76,14 @@
 		74E8F61A251CE37600B5CB16 /* RecipeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRouter.swift; sourceTree = "<group>"; };
 		74E8F61C251CE3D900B5CB16 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		74E8F61F251CE60600B5CB16 /* RecipeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailPresenter.swift; sourceTree = "<group>"; };
+		74E8F622251CF24700B5CB16 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
+		74E8F624251CF2EB00B5CB16 /* RepositoryREST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryREST.swift; sourceTree = "<group>"; };
+		74E8F626251CF30200B5CB16 /* RepositoryGrapQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryGrapQL.swift; sourceTree = "<group>"; };
+		74E8F629251CF82900B5CB16 /* recipeQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = recipeQuery.graphql; sourceTree = "<group>"; };
+		74E8F62A251CF82900B5CB16 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		74E8F62B251CF83200B5CB16 /* GraphQLRecipeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLRecipeAPI.swift; sourceTree = "<group>"; };
+		74E8F62E251CFE4C00B5CB16 /* RecipeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListInteractor.swift; sourceTree = "<group>"; };
+		74E8F634251D190300B5CB16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +94,7 @@
 				74E8F60B251CD4FE00B5CB16 /* Kingfisher in Frameworks */,
 				74E8F605251CD29D00B5CB16 /* RxSwift in Frameworks */,
 				74E8F608251CD47700B5CB16 /* Apollo in Frameworks */,
+				74E8F632251D02FD00B5CB16 /* Contentful in Frameworks */,
 				74E8F602251CD21D00B5CB16 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +139,8 @@
 		74E8F5C3251CCBCA00B5CB16 /* MarleySpoon */ = {
 			isa = PBXGroup;
 			children = (
+				74E8F633251D18DF00B5CB16 /* Utils */,
+				74E8F621251CF22700B5CB16 /* Service */,
 				74E8F614251CDB5300B5CB16 /* Model */,
 				74E8F5F6251CCD5300B5CB16 /* Application */,
 				74E8F5F5251CCD2B00B5CB16 /* Modules */,
@@ -181,6 +199,7 @@
 		74E8F5F7251CCD6600B5CB16 /* RecipeList */ = {
 			isa = PBXGroup;
 			children = (
+				74E8F62D251CFE3A00B5CB16 /* Interactor */,
 				74E8F611251CD96300B5CB16 /* Presenter */,
 				74E8F5FF251CD08D00B5CB16 /* View */,
 				74E8F5FA251CCDB700B5CB16 /* Router */,
@@ -264,6 +283,43 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		74E8F621251CF22700B5CB16 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F628251CF7F400B5CB16 /* GraphQLFiles */,
+				74E8F622251CF24700B5CB16 /* RepositoryProtocol.swift */,
+				74E8F624251CF2EB00B5CB16 /* RepositoryREST.swift */,
+				74E8F626251CF30200B5CB16 /* RepositoryGrapQL.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		74E8F628251CF7F400B5CB16 /* GraphQLFiles */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F62B251CF83200B5CB16 /* GraphQLRecipeAPI.swift */,
+				74E8F629251CF82900B5CB16 /* recipeQuery.graphql */,
+				74E8F62A251CF82900B5CB16 /* schema.json */,
+			);
+			path = GraphQLFiles;
+			sourceTree = "<group>";
+		};
+		74E8F62D251CFE3A00B5CB16 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F62E251CFE4C00B5CB16 /* RecipeListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		74E8F633251D18DF00B5CB16 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F634251D190300B5CB16 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,6 +341,7 @@
 				74E8F604251CD29D00B5CB16 /* RxSwift */,
 				74E8F607251CD47700B5CB16 /* Apollo */,
 				74E8F60A251CD4FE00B5CB16 /* Kingfisher */,
+				74E8F631251D02FD00B5CB16 /* Contentful */,
 			);
 			productName = MarleySpoon;
 			productReference = 74E8F5C1251CCBCA00B5CB16 /* MarleySpoon.app */;
@@ -363,6 +420,7 @@
 				74E8F603251CD29D00B5CB16 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				74E8F606251CD47700B5CB16 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				74E8F609251CD4FE00B5CB16 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				74E8F630251D02FD00B5CB16 /* XCRemoteSwiftPackageReference "contentful" */,
 			);
 			productRefGroup = 74E8F5C2251CCBCA00B5CB16 /* Products */;
 			projectDirPath = "";
@@ -411,13 +469,19 @@
 				74E8F5C9251CCBCA00B5CB16 /* RecipeListViewController.swift in Sources */,
 				74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */,
 				74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */,
+				74E8F62F251CFE4C00B5CB16 /* RecipeListInteractor.swift in Sources */,
+				74E8F627251CF30200B5CB16 /* RepositoryGrapQL.swift in Sources */,
 				74E8F620251CE60600B5CB16 /* RecipeDetailPresenter.swift in Sources */,
+				74E8F635251D190300B5CB16 /* Utils.swift in Sources */,
+				74E8F625251CF2EB00B5CB16 /* RepositoryREST.swift in Sources */,
 				74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */,
 				74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */,
 				74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */,
 				74E8F5C7251CCBCA00B5CB16 /* SceneDelegate.swift in Sources */,
 				74E8F61D251CE3D900B5CB16 /* RecipeDetailViewController.swift in Sources */,
 				74E8F5FE251CCFC400B5CB16 /* AppRoot.swift in Sources */,
+				74E8F62C251CF83200B5CB16 /* GraphQLRecipeAPI.swift in Sources */,
+				74E8F623251CF24700B5CB16 /* RepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +579,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MS_ACCESS_TOKEN = ACCESS_TOKEN;
+				MS_ENVIRONMENT_ID = ENVIRONMENT_ID;
+				MS_SPACE_ID = SPACE_ID;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -569,6 +636,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MS_ACCESS_TOKEN = ACCESS_TOKEN;
+				MS_ENVIRONMENT_ID = ENVIRONMENT_ID;
+				MS_SPACE_ID = SPACE_ID;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -766,6 +836,14 @@
 				minimumVersion = 5.15.4;
 			};
 		};
+		74E8F630251D02FD00B5CB16 /* XCRemoteSwiftPackageReference "contentful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/contentful/contentful.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -788,6 +866,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74E8F609251CD4FE00B5CB16 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		74E8F631251D02FD00B5CB16 /* Contentful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E8F630251D02FD00B5CB16 /* XCRemoteSwiftPackageReference "contentful" */;
+			productName = Contentful;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

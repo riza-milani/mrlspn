@@ -11,6 +11,7 @@ import RxSwift
 
 protocol RecipeListPresenterProtocol: class {
     var router: RecipeListRouterProtocol? { get set }
+    var interactor: RecipeListInteractorProtocols? { get set }
     var recipes: PublishSubject<[RecipeEntity]> { get set }
     func loadRecipes()
     func showRecipeDetail(_ recipe: RecipeEntity)
@@ -19,16 +20,30 @@ protocol RecipeListPresenterProtocol: class {
 class RecipeListPresenter: RecipeListPresenterProtocol {
 
     var router: RecipeListRouterProtocol?
+    var interactor: RecipeListInteractorProtocols?
     var recipes: PublishSubject<[RecipeEntity]> = PublishSubject()
+    let bag = DisposeBag()
 
     func loadRecipes() {
 
-        recipes.onNext([
-            RecipeEntity(title: "name1", image: "https://cdn5.myket.ir/icons/large/472d3ac3-d1ac-4e31-8df2-4d6e7406414b_.png", tags: ["tag1"], chef: "chef1", description: "desc 1"),
-            RecipeEntity(title: "name2", image: "https://i.pinimg.com/originals/5a/0f/46/5a0f46b121771ae113666f287864c50e.png", tags: ["tag1","tag2"], chef: "chef2", description: "desc 2"),
-            RecipeEntity(title: "name3", image: "https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/256x256/flower.png", tags: nil, chef: "chef3", description: "desc 3"),
-            RecipeEntity(title: "name2", image: "https://i.pinimg.com/originals/5a/0f/46/5a0f46b121771ae113666f287864c50e.png", tags: ["tag1","tag2","tag2","tag2","tag2","tag2"], chef: "chef2", description: "desc 2"),
-        ])
+        interactor?.fetchRecipes().subscribe(onSuccess: { [weak self] recipes in
+            self?.recipes.onNext(recipes)
+        }, onError: { error in
+
+        }).disposed(by: bag)
+        //RepositoryGraphQL()
+//        RepositoryREST()
+//            .fetchRecipes()
+//            .subscribe(onNext: { [weak self] result in
+//            switch (result) {
+//            case .success(let recipes):
+//                self?.recipes.onNext(recipes)
+//            case .failure(let error):
+//                break
+//            }
+//        }, onError: { error in
+//            // TODO: Complete here!
+//        }).disposed(by: bag)
     }
 
     func showRecipeDetail(_ recipe: RecipeEntity) {

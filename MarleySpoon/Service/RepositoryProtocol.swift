@@ -9,14 +9,10 @@
 import Foundation
 import RxSwift
 
-protocol RepositoryProtocol {
-    func fetchRecipe() -> Observable<Result<RecipeEntity, Error>>
+enum ClientError: Error {
+    case failed
 }
 
-class RepositoryREST: RepositoryProtocol {
-    func fetchRecipe() -> Observable<Result<RecipeEntity, Error>> {
-        return Observable.create { observer -> Disposable in
-            return Disposables.create()
-        }
-    }
+protocol RepositoryProtocol {
+    func fetchRecipes() -> Observable<Result<[RecipeEntity], Error>>
 }
