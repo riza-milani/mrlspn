@@ -13,7 +13,7 @@
 		74E8F5CE251CCBCD00B5CB16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F5CD251CCBCD00B5CB16 /* Assets.xcassets */; };
 		74E8F5D1251CCBCD00B5CB16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F5CF251CCBCD00B5CB16 /* LaunchScreen.storyboard */; };
 		74E8F5DC251CCBCE00B5CB16 /* MarleySpoonRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5DB251CCBCE00B5CB16 /* MarleySpoonRepositoryTests.swift */; };
-		74E8F5E7251CCBCE00B5CB16 /* MarleySpoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5E6251CCBCE00B5CB16 /* MarleySpoonUITests.swift */; };
+		74E8F5E7251CCBCE00B5CB16 /* MarleySpoonRecipeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5E6251CCBCE00B5CB16 /* MarleySpoonRecipeListUITests.swift */; };
 		74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5FB251CCDD200B5CB16 /* RecipeListRouter.swift */; };
 		74E8F5FE251CCFC400B5CB16 /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */; };
 		74E8F602251CD21D00B5CB16 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74E8F601251CD21D00B5CB16 /* SnapKit */; };
@@ -38,6 +38,7 @@
 		74E8F639251D384800B5CB16 /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F638251D384800B5CB16 /* UIViewController+Extentions.swift */; };
 		74E8F63B251D50BB00B5CB16 /* MarleySpoonInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F63A251D50BB00B5CB16 /* MarleySpoonInteractorTests.swift */; };
 		74E8F63D251D50F300B5CB16 /* MarleySpoonRecipeListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F63C251D50F300B5CB16 /* MarleySpoonRecipeListPresenterTests.swift */; };
+		74E8F640251D532400B5CB16 /* MarleySpoonRecipeDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F63E251D531D00B5CB16 /* MarleySpoonRecipeDetailUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,7 @@
 		74E8F5DB251CCBCE00B5CB16 /* MarleySpoonRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRepositoryTests.swift; sourceTree = "<group>"; };
 		74E8F5DD251CCBCE00B5CB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E8F5E2251CCBCE00B5CB16 /* MarleySpoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarleySpoonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74E8F5E6251CCBCE00B5CB16 /* MarleySpoonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonUITests.swift; sourceTree = "<group>"; };
+		74E8F5E6251CCBCE00B5CB16 /* MarleySpoonRecipeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRecipeListUITests.swift; sourceTree = "<group>"; };
 		74E8F5E8251CCBCE00B5CB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E8F5FB251CCDD200B5CB16 /* RecipeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRouter.swift; sourceTree = "<group>"; };
 		74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		74E8F638251D384800B5CB16 /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		74E8F63A251D50BB00B5CB16 /* MarleySpoonInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonInteractorTests.swift; sourceTree = "<group>"; };
 		74E8F63C251D50F300B5CB16 /* MarleySpoonRecipeListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRecipeListPresenterTests.swift; sourceTree = "<group>"; };
+		74E8F63E251D531D00B5CB16 /* MarleySpoonRecipeDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRecipeDetailUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +173,8 @@
 		74E8F5E5251CCBCE00B5CB16 /* MarleySpoonUITests */ = {
 			isa = PBXGroup;
 			children = (
-				74E8F5E6251CCBCE00B5CB16 /* MarleySpoonUITests.swift */,
+				74E8F5E6251CCBCE00B5CB16 /* MarleySpoonRecipeListUITests.swift */,
+				74E8F63E251D531D00B5CB16 /* MarleySpoonRecipeDetailUITests.swift */,
 				74E8F5E8251CCBCE00B5CB16 /* Info.plist */,
 			);
 			path = MarleySpoonUITests;
@@ -513,7 +516,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E8F5E7251CCBCE00B5CB16 /* MarleySpoonUITests.swift in Sources */,
+				74E8F640251D532400B5CB16 /* MarleySpoonRecipeDetailUITests.swift in Sources */,
+				74E8F5E7251CCBCE00B5CB16 /* MarleySpoonRecipeListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

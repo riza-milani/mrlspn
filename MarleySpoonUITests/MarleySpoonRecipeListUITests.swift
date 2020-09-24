@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MarleySpoonUITests: XCTestCase {
+class MarleySpoonRecipeListUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,6 +28,8 @@ class MarleySpoonUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        let recipeListViewControllerTitle = app.staticTexts.firstMatch
+        XCTAssertEqual(recipeListViewControllerTitle.label, "Recipes")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
