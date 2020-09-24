@@ -24,6 +24,9 @@
 		74E8F610251CD6C900B5CB16 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */; };
 		74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */; };
 		74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */; };
+		74E8F61B251CE37600B5CB16 /* RecipeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61A251CE37600B5CB16 /* RecipeDetailRouter.swift */; };
+		74E8F61D251CE3D900B5CB16 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61C251CE3D900B5CB16 /* RecipeDetailViewController.swift */; };
+		74E8F620251CE60600B5CB16 /* RecipeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F61F251CE60600B5CB16 /* RecipeDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenter.swift; sourceTree = "<group>"; };
 		74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEntity.swift; sourceTree = "<group>"; };
+		74E8F61A251CE37600B5CB16 /* RecipeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRouter.swift; sourceTree = "<group>"; };
+		74E8F61C251CE3D900B5CB16 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		74E8F61F251CE60600B5CB16 /* RecipeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,9 @@
 		74E8F5F8251CCD9B00B5CB16 /* RecipeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				74E8F61E251CE5F000B5CB16 /* Presenter */,
+				74E8F618251CE35300B5CB16 /* View */,
+				74E8F619251CE35B00B5CB16 /* Router */,
 			);
 			path = RecipeDetail;
 			sourceTree = "<group>";
@@ -229,6 +238,30 @@
 				74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		74E8F618251CE35300B5CB16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F61C251CE3D900B5CB16 /* RecipeDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74E8F619251CE35B00B5CB16 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F61A251CE37600B5CB16 /* RecipeDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		74E8F61E251CE5F000B5CB16 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F61F251CE60600B5CB16 /* RecipeDetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,13 +407,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E8F61B251CE37600B5CB16 /* RecipeDetailRouter.swift in Sources */,
 				74E8F5C9251CCBCA00B5CB16 /* RecipeListViewController.swift in Sources */,
 				74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */,
 				74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */,
+				74E8F620251CE60600B5CB16 /* RecipeDetailPresenter.swift in Sources */,
 				74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */,
 				74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */,
 				74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */,
 				74E8F5C7251CCBCA00B5CB16 /* SceneDelegate.swift in Sources */,
+				74E8F61D251CE3D900B5CB16 /* RecipeDetailViewController.swift in Sources */,
 				74E8F5FE251CCFC400B5CB16 /* AppRoot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

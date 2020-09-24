@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeCell: UITableViewCell {
 
@@ -26,6 +27,9 @@ class RecipeCell: UITableViewCell {
 
     override func prepareForReuse() {
         recipeTitle.text = recipe?.title
+        if let imageString = recipe?.image, let imageUrl = URL(string: imageString) {
+            recipeImage.kf.setImage(with: imageUrl)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
