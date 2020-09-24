@@ -74,7 +74,9 @@ class RecipeListViewController: UIViewController {
 
 extension RecipeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showRecipeDetailById(indexPath.row)
+        if let recipe = recipes?[indexPath.row] {
+            presenter?.showRecipeDetail(recipe)
+        }
     }
 }
 

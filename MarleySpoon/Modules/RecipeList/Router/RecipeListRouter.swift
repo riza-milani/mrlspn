@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RecipeListRouterProtocol: class {
-    func showRecipeDetail()
+    func showRecipeDetail(_ recipe: RecipeEntity)
 }
 
 class RecipeListRouter: RecipeListRouterProtocol {
@@ -22,7 +22,7 @@ class RecipeListRouter: RecipeListRouterProtocol {
         return viewController
     }
 
-    func showRecipeDetail() {
+    func showRecipeDetail(_ recipe: RecipeEntity) {
         print("showRecipeDetail")
     }
 }

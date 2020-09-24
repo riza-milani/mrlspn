@@ -13,7 +13,7 @@ protocol RecipeListPresenterProtocol: class {
     var router: RecipeListRouterProtocol? { get set }
     var recipes: PublishSubject<[RecipeEntity]> { get set }
     func loadRecipes()
-    func showRecipeDetailById(_ id: Int)
+    func showRecipeDetail(_ recipe: RecipeEntity)
 }
 
 class RecipeListPresenter: RecipeListPresenterProtocol {
@@ -30,8 +30,8 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
         ])
     }
 
-    func showRecipeDetailById(_ id: Int) {
-        router?.showRecipeDetail()
+    func showRecipeDetail(_ recipe: RecipeEntity) {
+        router?.showRecipeDetail(recipe)
     }
 
 
