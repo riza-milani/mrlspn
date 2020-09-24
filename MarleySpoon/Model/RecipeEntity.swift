@@ -8,10 +8,20 @@
 
 import Foundation
 
-struct RecipeEntity: Decodable {
+struct RecipeEntity: Codable {
     let title: String?
     let image: String?
     let tags: [String]?
     let chef: String?
     let description: String?
+}
+
+extension RecipeEntity: Equatable {
+    static func == (lhs: RecipeEntity, rhs: RecipeEntity) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.image == rhs.image &&
+            lhs.tags == rhs.tags &&
+            lhs.chef == rhs.chef &&
+            lhs.description == rhs.description
+    }
 }
