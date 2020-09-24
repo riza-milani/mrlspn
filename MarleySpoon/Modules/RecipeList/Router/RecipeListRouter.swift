@@ -11,7 +11,7 @@ import UIKit
 class RecipeListRouter {
 
     func assemble() -> UIViewController {
-        let viewController = ViewController()
+        let viewController = RecipeListViewController()
         return viewController
     }
 }
