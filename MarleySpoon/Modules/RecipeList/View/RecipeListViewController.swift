@@ -16,7 +16,6 @@ class RecipeListViewController: UIViewController {
     let bag = DisposeBag()
     var recipes: [RecipeEntity]? {
         didSet {
-            showNoRecipe(recipes?.isEmpty ?? true)
             tableView.reloadData()
         }
     }
@@ -25,6 +24,7 @@ class RecipeListViewController: UIViewController {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: String(describing: RecipeCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: RecipeCell.self))
@@ -33,19 +33,33 @@ class RecipeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Recipes"
         view.addSubview(tableView)
-        showNoRecipe(true)
         subscribeToRecipes()
         presenter?.loadRecipes()
     }
 
     func subscribeToRecipes() {
+
+        presenter?.recipeListState.subscribe(onNext: { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .loading:
+                self.showLoading(true)
+                self.showNoRecipe(false)
+            case .loaded:
+                self.showLoading(false)
+            case .empty:
+                self.showLoading(false)
+                self.showNoRecipe(true)
+            case .error(let error):
+                self.showLoading(false)
+                self.showNoRecipe(true, message: error.localizedDescription)
+            }
+        }).disposed(by: bag)
+
         presenter?.recipes.subscribe(onNext: { [weak self] recipes in
             self?.recipes = recipes
-
-        }, onError: { error in
-            print("Error \(error)")
         }).disposed(by: bag)
     }
 
@@ -57,10 +71,10 @@ class RecipeListViewController: UIViewController {
         }
     }
 
-    func showNoRecipe(_ state: Bool) {
+    func showNoRecipe(_ state: Bool, message: String = "No recipes yet!\nCome back soon ...") {
         if state {
             let tableViewBackgroundView = UILabel()
-            tableViewBackgroundView.text = "No recipes yet!\nCome back soon ..."
+            tableViewBackgroundView.text = message
             tableViewBackgroundView.numberOfLines = 0
             tableViewBackgroundView.font = UIFont.systemFont(ofSize: 20.0)
             tableViewBackgroundView.textAlignment = .center
@@ -90,6 +104,5 @@ extension RecipeListViewController: UITableViewDataSource {
         cell.recipe = recipes?[indexPath.row]
         return cell
     }
-
-
 }
+

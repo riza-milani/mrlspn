@@ -23,6 +23,8 @@ class RecipeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cardView.layer.cornerRadius = 10
+        selectionStyle = .none
+        recipeImage.layer.cornerRadius = recipeImage.frame.height / 2
     }
 
     override func prepareForReuse() {
