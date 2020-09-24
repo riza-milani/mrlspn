@@ -23,23 +23,24 @@ class MarleySpoonRecipeListUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testRecipeListViewController() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
 
         let recipeListViewControllerTitle = app.staticTexts.firstMatch
         XCTAssertEqual(recipeListViewControllerTitle.label, "Recipes")
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+        let cell0 = app.tables.cells.element(boundBy: 0)
+        XCTAssertEqual(cell0.staticTexts.firstMatch.label, "White Cheddar Grilled Cheese with Cherry Preserves & Basil")
+
+        let cell1 = app.tables.cells.element(boundBy: 1)
+        XCTAssertEqual(cell1.staticTexts.firstMatch.label, "Tofu Saag Paneer with Buttery Toasted Pita")
+
+        let cell2 = app.tables.cells.element(boundBy: 2)
+        XCTAssertEqual(cell2.staticTexts.firstMatch.label, "Grilled Steak & Vegetables with Cilantro-Jalapeño Dressing")
+
+        let cell3 = app.tables.cells.element(boundBy: 3)
+        XCTAssertEqual(cell3.staticTexts.firstMatch.label, "Crispy Chicken and Rice\twith Peas & Arugula Salad")
     }
 }

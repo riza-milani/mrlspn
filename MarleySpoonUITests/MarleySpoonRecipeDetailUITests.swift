@@ -23,21 +23,23 @@ class MarleySpoonRecipeDetailUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testRecipeDetailViewController() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["White Cheddar Grilled Cheese with Cherry Preserves & Basil"].tap()
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+        let recipeTitle = app.staticTexts.element(boundBy: 0)
+        XCTAssertEqual(recipeTitle.label, "White Cheddar Grilled Cheese with Cherry Preserves & Basil")
+
+        let recipeTag = app.staticTexts.element(boundBy: 2)
+        XCTAssertEqual(recipeTag.label, "vegan")
+
+        let recipeDescription = app.staticTexts.element(boundBy: 3)
+        XCTAssertEqual(recipeDescription.label, "*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside; add one or two ingredients for a flavor punch! In this case, cherry preserves serve as a sweet contrast to cheddar cheese, and basil adds a light, refreshing note. Use __mayonnaise__ on the outside of the bread to achieve the ultimate, crispy, golden-brown __grilled cheese__. Cook, relax, and enjoy!")
+
+        XCTAssert(app.images.firstMatch.exists)
     }
 }
