@@ -8,10 +8,21 @@
 
 import UIKit
 
-class RecipeListRouter {
+protocol RecipeListRouterProtocol: class {
+    func showRecipeDetail()
+}
+
+class RecipeListRouter: RecipeListRouterProtocol {
 
     func assemble() -> UIViewController {
         let viewController = RecipeListViewController()
+        let presenter = RecipeListPresenter()
+        presenter.router = self
+        viewController.presenter = presenter
         return viewController
+    }
+
+    func showRecipeDetail() {
+        print("showRecipeDetail")
     }
 }

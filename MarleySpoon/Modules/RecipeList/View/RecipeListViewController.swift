@@ -11,11 +11,14 @@ import SnapKit
 
 class RecipeListViewController: UIViewController {
 
+    var presenter: RecipeListPresenterProtocol?
+
     lazy private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: String(describing: RecipeCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: RecipeCell.self))
         return tableView
     }()
@@ -34,6 +37,12 @@ class RecipeListViewController: UIViewController {
         }
     }
 
+}
+
+extension RecipeListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.showRecipeDetailById(indexPath.row)
+    }
 }
 
 extension RecipeListViewController: UITableViewDataSource {

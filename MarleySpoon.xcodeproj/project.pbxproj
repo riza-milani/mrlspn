@@ -22,6 +22,7 @@
 		74E8F60B251CD4FE00B5CB16 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 74E8F60A251CD4FE00B5CB16 /* Kingfisher */; };
 		74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F60D251CD6C900B5CB16 /* RecipeCell.swift */; };
 		74E8F610251CD6C900B5CB16 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */; };
+		74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		74E8F5FD251CCFC400B5CB16 /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
 		74E8F60D251CD6C900B5CB16 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
+		74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		74E8F5F7251CCD6600B5CB16 /* RecipeList */ = {
 			isa = PBXGroup;
 			children = (
+				74E8F611251CD96300B5CB16 /* Presenter */,
 				74E8F5FF251CD08D00B5CB16 /* View */,
 				74E8F5FA251CCDB700B5CB16 /* Router */,
 			);
@@ -207,6 +210,14 @@
 				74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */,
 			);
 			path = RecipeCell;
+			sourceTree = "<group>";
+		};
+		74E8F611251CD96300B5CB16 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				74E8F612251CD97400B5CB16 /* RecipeListPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E8F5C9251CCBCA00B5CB16 /* RecipeListViewController.swift in Sources */,
+				74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */,
 				74E8F5C5251CCBCA00B5CB16 /* AppDelegate.swift in Sources */,
 				74E8F5FC251CCDD200B5CB16 /* RecipeListRouter.swift in Sources */,
 				74E8F60F251CD6C900B5CB16 /* RecipeCell.swift in Sources */,
