@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Contentful",
+        "repositoryURL": "https://github.com/contentful/contentful.swift",
+        "state": {
+          "branch": null,
+          "revision": "56e136b4282fc66531688722c893b82b8fbde86f",
+          "version": "5.2.0"
+        }
+      },
+      {
         "package": "Kingfisher",
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {

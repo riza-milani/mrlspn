@@ -1,0 +1,26 @@
+query AllRecipes {
+  recipeCollection {
+    items {
+      title
+      description
+      chef {
+        name
+      }
+      tagsCollection {
+        items {
+          name
+        }
+      }
+      photo {
+        title
+        description
+        contentType
+        fileName
+        size
+        url
+        width
+        height
+      }
+    }
+  }
+}
