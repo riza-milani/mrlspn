@@ -22,5 +22,6 @@ Following subjects used in this project:
 * SPM will prepare all third-party libraries. No need for Cocoapods or Carthage.
 * Unit and UI tests is covering important part of the project.
 
-![Screen 1](./recipe_list_view.png)
-![Screen 2](recipe_detail_view.png)
+| Main Page  | Detail Page |
+|------------|-------------|
+| <img src="./recipe_list_view.png" width="250"> | <img src="./recipe_detail_view.png" width="250"> |
