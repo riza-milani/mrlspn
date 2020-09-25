@@ -98,25 +98,27 @@ class RecipeDetailViewController: UIViewController {
 
         recipeTitle.snp.makeConstraints { make in
             make.top.equalTo(recipeImageView.snp.bottom).offset(16)
-            make.trailing.leading.equalToSuperview().inset(16)
+            make.trailing.equalTo(view.snp.trailingMargin)
+            make.leading.equalTo(view.snp.leadingMargin)
         }
 
         recipeChefName.snp.makeConstraints { make in
             make.top.equalTo(recipeTitle.snp.bottom).offset(16)
-            make.leading.equalToSuperview().inset(16)
+            make.leading.equalTo(view.snp.leadingMargin)
             make.trailing.equalTo(view.snp.centerX).inset(32)
         }
 
         recipeTags.snp.makeConstraints { make in
             make.top.equalTo(recipeTitle.snp.bottom).offset(16)
             make.bottom.equalTo(recipeChefName)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalTo(view.snp.trailingMargin)
             make.leading.equalTo(view.snp.centerX).inset(32)
         }
 
         recipeDescription.snp.makeConstraints { make in
             make.top.equalTo(recipeChefName.snp.bottom).offset(16)
-            make.trailing.leading.equalToSuperview().inset(16)
+            make.leading.equalTo(view.snp.leadingMargin)
+            make.trailing.equalTo(view.snp.trailingMargin)
             make.bottom.equalToSuperview().offset(-16)
         }
     }
