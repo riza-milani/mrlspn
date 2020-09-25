@@ -6,7 +6,7 @@ Following subjects used in this project:
 * VIPER architecture
 * Apollo :     GraphQL client
 * RxSwift :     Reactive Programming
-* SnapKit : Better contraint functionality
+* SnapKit : Better constraints functionality
 * Kingfisher : URL image loading
 
 ## Prerequisite
