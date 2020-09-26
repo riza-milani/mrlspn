@@ -33,7 +33,9 @@ class ContentfulREST {
             clientConfiguration: .default,
             sessionConfiguration:  .default,
             persistenceIntegration: nil,
-            contentTypeClasses: [RecipeEntry.self])
+            contentTypeClasses: [RecipeEntry.self,
+                                 RecipeChefEnrty.self,
+                                 RecipeTagEntry.self])
     }
 }
 class RepositoryREST: RepositoryProtocol {

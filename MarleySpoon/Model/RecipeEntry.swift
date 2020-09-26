@@ -20,8 +20,8 @@ final class RecipeEntry: EntryDecodable, FieldKeysQueryable {
 
     let title: String?
     let description: String?
-    let chef: String?
-    let tags: [String]?
+    var chef: String?
+    var tags: [String]?
     var photo: Asset?
 
     public required init(from decoder: Decoder) throws {
@@ -37,8 +37,16 @@ final class RecipeEntry: EntryDecodable, FieldKeysQueryable {
 
         self.description = try fields.decodeIfPresent(String.self, forKey: .description)
         self.title = try fields.decodeIfPresent(String.self, forKey: .title)
-        self.tags = try? fields.decodeIfPresent([String].self, forKey: .tags)
-        self.chef = try? fields.decodeIfPresent(String.self, forKey: .chef)
+
+        try fields.resolveLinksArray(forKey: .tags, decoder: decoder) { [weak self] tagEntries in
+            if let tagEntries = tagEntries as? [RecipeTagEntry] {
+                self?.tags = tagEntries.map{ $0.name ?? "" }
+            }
+        }
+
+        try fields.resolveLink(forKey: .chef, decoder: decoder) { [weak self] chefEntry in
+            self?.chef = (chefEntry as? RecipeChefEnrty)?.name
+        }
 
         try fields.resolveLink(forKey: .photo, decoder: decoder) { [weak self] image in
             self?.photo = image as? Asset

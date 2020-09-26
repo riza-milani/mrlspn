@@ -56,6 +56,10 @@
 		74E8F64F251D5FED00B5CB16 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F60D251CD6C900B5CB16 /* RecipeCell.swift */; };
 		74E8F650251D600300B5CB16 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E8F60E251CD6C900B5CB16 /* RecipeCell.xib */; };
 		74E8F651251D602300B5CB16 /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F638251D384800B5CB16 /* UIViewController+Extentions.swift */; };
+		74E8F653251F2AE400B5CB16 /* RecipeTagEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F652251F2AE400B5CB16 /* RecipeTagEntry.swift */; };
+		74E8F654251F2AEB00B5CB16 /* RecipeTagEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F652251F2AE400B5CB16 /* RecipeTagEntry.swift */; };
+		74E8F656251F2AFE00B5CB16 /* RecipeChefEnrty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F655251F2AFE00B5CB16 /* RecipeChefEnrty.swift */; };
+		74E8F658251F2C6E00B5CB16 /* RecipeChefEnrty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8F655251F2AFE00B5CB16 /* RecipeChefEnrty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,8 @@
 		74E8F63A251D50BB00B5CB16 /* MarleySpoonInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonInteractorTests.swift; sourceTree = "<group>"; };
 		74E8F63C251D50F300B5CB16 /* MarleySpoonRecipeListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRecipeListPresenterTests.swift; sourceTree = "<group>"; };
 		74E8F63E251D531D00B5CB16 /* MarleySpoonRecipeDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarleySpoonRecipeDetailUITests.swift; sourceTree = "<group>"; };
+		74E8F652251F2AE400B5CB16 /* RecipeTagEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTagEntry.swift; sourceTree = "<group>"; };
+		74E8F655251F2AFE00B5CB16 /* RecipeChefEnrty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeChefEnrty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +292,8 @@
 			children = (
 				74E8F615251CDB7900B5CB16 /* RecipeEntity.swift */,
 				74E8F636251D1E5E00B5CB16 /* RecipeEntry.swift */,
+				74E8F652251F2AE400B5CB16 /* RecipeTagEntry.swift */,
+				74E8F655251F2AFE00B5CB16 /* RecipeChefEnrty.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,7 +510,9 @@
 				74E8F5C9251CCBCA00B5CB16 /* RecipeListViewController.swift in Sources */,
 				74E8F613251CD97400B5CB16 /* RecipeListPresenter.swift in Sources */,
 				74E8F616251CDB7900B5CB16 /* RecipeEntity.swift in Sources */,
+				74E8F656251F2AFE00B5CB16 /* RecipeChefEnrty.swift in Sources */,
 				74E8F62F251CFE4C00B5CB16 /* RecipeListInteractor.swift in Sources */,
+				74E8F653251F2AE400B5CB16 /* RecipeTagEntry.swift in Sources */,
 				74E8F627251CF30200B5CB16 /* RepositoryGrapQL.swift in Sources */,
 				74E8F637251D1E5E00B5CB16 /* RecipeEntry.swift in Sources */,
 				74E8F620251CE60600B5CB16 /* RecipeDetailPresenter.swift in Sources */,
@@ -528,7 +538,9 @@
 				74E8F63B251D50BB00B5CB16 /* MarleySpoonInteractorTests.swift in Sources */,
 				74E8F647251D5F3100B5CB16 /* RecipeListInteractor.swift in Sources */,
 				74E8F64F251D5FED00B5CB16 /* RecipeCell.swift in Sources */,
+				74E8F658251F2C6E00B5CB16 /* RecipeChefEnrty.swift in Sources */,
 				74E8F64E251D5FE700B5CB16 /* RecipeDetailPresenter.swift in Sources */,
+				74E8F654251F2AEB00B5CB16 /* RecipeTagEntry.swift in Sources */,
 				74E8F641251D5EF700B5CB16 /* RepositoryProtocol.swift in Sources */,
 				74E8F63D251D50F300B5CB16 /* MarleySpoonRecipeListPresenterTests.swift in Sources */,
 				74E8F642251D5EFA00B5CB16 /* RepositoryREST.swift in Sources */,
