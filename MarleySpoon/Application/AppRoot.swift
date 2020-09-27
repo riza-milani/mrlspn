@@ -21,7 +21,6 @@ class AppRoot: AppRootProtocol {
         let navigationContoller = UINavigationController(rootViewController: destinationViewController)
         navigationContoller.modalPresentationStyle = .fullScreen
         window.rootViewController = navigationContoller
-        window.makeKeyAndVisible()
         return window
     }
 }
